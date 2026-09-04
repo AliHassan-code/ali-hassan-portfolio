@@ -10,7 +10,7 @@ export const Navbar = () => {
     <nav className={`site-nav${menuOpen ? " menu-open" : ""}`}>
       <div className="nav-inner">
         <a href="#top" className="brand-mark" aria-label="Ali Hassan home" onClick={closeMenu}>
-          <span className="brand-icon">AH</span>
+          <span className="brand-icon"><img src="/ali-hassan.jpg" alt="Ali Hassan" /></span>
           <span>
             <strong>Ali</strong>
             <small>Hassan / Developer</small>
