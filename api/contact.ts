@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
-import nodemailer from "nodemailer"
 
 const requestLog = new Map<string, number[]>()
 const rateLimitWindow = 15 * 60 * 1000
@@ -51,6 +50,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   const smtpPass = process.env.SMTP_PASS
 
   if (smtpHost && smtpUser && smtpPass) {
+    const { default: nodemailer } = await import("nodemailer")
+
     // Configure nodemailer with provided SMTP credentials
     const transporter = nodemailer.createTransport({
       host: smtpHost,
