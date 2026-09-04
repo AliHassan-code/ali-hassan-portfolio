@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { contactForm } from "../../data/content"
+import { ArrowUpRight, Mail, Phone } from "lucide-react"
 
 export const Contact = () => {
   const [name, setName] = useState("")
@@ -44,14 +44,27 @@ export const Contact = () => {
   }
 
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="max-w-2xl mx-auto px-6">
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact</h2>
-          <p className="text-lg text-gray-600">Get in touch or fill out the form below</p>
+    <section className="contact-section py-24 md:py-32 bg-white">
+      <div className="contact-grid-lines" />
+      <div className="contact-orbit contact-orbit-one" />
+      <div className="contact-orbit contact-orbit-two" />
+      <div className="contact-inner max-w-7xl mx-auto px-6">
+        <div className="contact-intro">
+          <p className="eyebrow"><span /> Let's build something useful</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Have a problem<br /><em>worth solving?</em></h2>
+          <p className="contact-lede">Tell me what you are building, where it is stuck, or what you want to improve. I will bring a practical next step to the conversation.</p>
+          <div className="contact-details">
+            <a href="mailto:alihassantariq107@gmail.com"><Mail size={17} /> alihassantariq107@gmail.com</a>
+            <a href="tel:03273911676"><Phone size={17} /> 0327-3911676</a>
+          </div>
+          <div className="contact-signal"><span /> Usually replies within 1 business day</div>
+        </div>
+
+        <div className="contact-form-card">
+          <div className="contact-form-header"><span>Project inquiry</span><span>01 / 01</span></div>
 
           {status && (
-            <div className="p-4 rounded bg-primary/5 text-primary mb-4">
+            <div className="contact-status p-4 rounded bg-primary/5 text-primary mb-4">
               {status}
             </div>
           )}
@@ -100,52 +113,12 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-full py-4 mt-6"
+              className="button button-blue contact-submit w-full py-4 mt-6"
             >
-              Send Message
+              Send message <ArrowUpRight size={17} />
             </button>
           </form>
 
-          <div className="mt-8 pt-8 border-t border-gray-200">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-medium mb-4">Contact Details</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4">
-                    <Mail width={20} height={20} className="text-primary" />
-                    <span>
-                      alihassantariq107@gmail.com
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Phone width={20} height={20} className="text-primary" />
-                    <span>0327-3911676</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-4">Socials</h3>
-                <div className="space-y-3">
-                  <a
-                    href="https://github.com/AliHassan-code"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:underline"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/ali-hassan-choudhary/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:underline"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -155,7 +128,7 @@ export const Contact = () => {
 const validateForm = (name: string, email: string, message: string) => {
   if (!name.trim()) return "Please enter your name"
   if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    "Please enter a valid email"
+    return "Please enter a valid email"
   if (!message.trim()) return "Please enter a message"
   return true
 }

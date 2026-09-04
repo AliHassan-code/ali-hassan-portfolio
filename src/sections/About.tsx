@@ -1,31 +1,36 @@
+import { ArrowUpRight, Check, MapPin } from "lucide-react"
+
 export const About = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">
-        About Me
-      </h2>
-      <p className="text-lg text-gray-600 mb-8">
-        Full-Stack Developer with 5+ years of experience designing and building responsive web applications, SaaS platforms, and desktop solutions using the .NET ecosystem and the MERN stack. Skilled in delivering end-to-end products — from database design and backend APIs to polished, user-friendly front ends — for clients across retail, hospitality, and real estate. Strong background in point-of-sale systems, booking platforms, and business-focused web applications.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Skills Summary</h3>
-          <ul className="space-y-3 text-gray-600">
-            <li>C# & ASP.NET Core</li>
-            <li>React & MERN Stack</li>
-            <li>SQL Server & PostgreSQL</li>
-            <li>Microsoft Azure</li>
-            <li>Git & GitHub</li>
-            <li>REST API Development</li>
-          </ul>
+    <section className="about-section py-24 md:py-32">
+      <div className="about-inner max-w-7xl mx-auto px-6">
+        <div className="about-copy">
+          <p className="eyebrow"><span /> A developer with a product mindset</p>
+          <h2>Good software makes<br /><em>complex things clear.</em></h2>
+          <p className="about-lede">I am Ali Hassan, a full-stack developer focused on building business software that feels straightforward to use and dependable behind the scenes.</p>
+          <p className="about-body">For more than five years, I have worked across retail, hospitality, and real estate, connecting thoughtful interfaces with solid APIs, useful data models, and deployments that can grow with the team using them.</p>
+          <a href="#contact" className="button button-blue about-cta">Let&apos;s work together <ArrowUpRight size={16} /></a>
         </div>
-        <div>
-          <h3 className="text-2xl font-bold mb-4">Experience</h3>
-          <p className="text-gray-600 text-sm">
-            5+ years of professional full-stack development experience
-          </p>
+
+        <div className="about-profile-card">
+          <div className="about-card-top"><span>Profile / 01</span><MapPin size={18} /></div>
+          <div className="about-monogram">AH</div>
+          <div className="about-profile-meta"><strong>Ali Hassan</strong><span>Full-Stack / .NET Developer</span></div>
+          <div className="about-stats">
+            <div><strong>5+</strong><span>Years experience</span></div>
+            <div><strong>2</strong><span>Primary stacks</span></div>
+            <div><strong>∞</strong><span>Curiosity</span></div>
+          </div>
+          <div className="about-focus">
+            <span>Current focus</span>
+            <ul>
+              <li><Check size={14} /> Product-minded engineering</li>
+              <li><Check size={14} /> Clear, maintainable systems</li>
+              <li><Check size={14} /> Interfaces people enjoy using</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

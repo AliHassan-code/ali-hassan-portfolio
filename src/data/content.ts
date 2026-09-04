@@ -3,6 +3,13 @@ export interface SkillCategory {
   items: string[]
 }
 
+export interface Service {
+  number: string
+  title: string
+  description: string
+  details: string[]
+}
+
 export interface TimelineItem {
   role: string
   company: string
@@ -24,6 +31,32 @@ export interface ContactFormData {
   email: string
   message: string
 }
+
+export interface FaqItem {
+  question: string
+  answer: string
+}
+
+export const services: Service[] = [
+  {
+    number: "01",
+    title: "Full-Stack Products",
+    description: "From an early idea to a dependable product that people can use every day.",
+    details: ["React interfaces", "ASP.NET Core APIs", "Responsive delivery"],
+  },
+  {
+    number: "02",
+    title: "Business Systems",
+    description: "Focused software for the workflows that keep a business moving.",
+    details: ["POS and inventory", "Booking platforms", "Role-based dashboards"],
+  },
+  {
+    number: "03",
+    title: "Data & Cloud",
+    description: "Clear data foundations and deployments that stay maintainable as you grow.",
+    details: ["SQL and MongoDB", "REST API design", "Microsoft Azure"],
+  },
+]
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -74,6 +107,29 @@ export const projects: Project[] = [
     description: "Developed custom websites for clients including property dealer listings, hotel room booking, and tour booking systems, tailored to each client's specific requirements.",
     tags: ["React", "Node.js", "MongoDB", "MERN"],
     githubUrl: "https://github.com/AliHassan-code/mern-bookings",
+  },
+]
+
+export const faqItems: FaqItem[] = [
+  {
+    question: "What kind of projects do you take on?",
+    answer: "I work on responsive websites, SaaS platforms, booking systems, dashboards, and business applications where a dependable full-stack implementation is needed.",
+  },
+  {
+    question: "Can you work with an existing codebase?",
+    answer: "Yes. I can extend an existing React, Node.js, or ASP.NET Core application, improve its architecture, fix difficult issues, and ship focused new features.",
+  },
+  {
+    question: "Which technologies do you use?",
+    answer: "My core stack is C#, ASP.NET Core, React, JavaScript, Node.js, SQL Server, PostgreSQL, MongoDB, REST APIs, and Microsoft Azure.",
+  },
+  {
+    question: "How do you approach a new product idea?",
+    answer: "I start by clarifying the user workflow and the smallest useful release, then shape the data model, technical plan, interface, and delivery milestones around it.",
+  },
+  {
+    question: "How can we start a conversation?",
+    answer: "Send a short message through the contact form with what you are building, your current stage, and the outcome you need. I will reply with a practical next step.",
   },
 ]
 

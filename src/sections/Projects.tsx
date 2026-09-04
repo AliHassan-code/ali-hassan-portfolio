@@ -2,7 +2,7 @@ import { projects } from "../data/content"
 
 export const Projects = () => {
   return (
-    <section className="py-24 md:py-32 bg-gray-50">
+    <section className="projects-section py-24 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Projects & Portfolio</h2>
@@ -15,12 +15,13 @@ export const Projects = () => {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+              className="project-card group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="aspect-video rounded-t-xl bg-primary/10">
-                <div className="absolute inset-0 flex items-center justify-center text-center">
-                  <span className="text-xl text-gray-400">📱</span>
-                </div>
+              <div className="project-art aspect-video rounded-t-xl bg-primary/10">
+                <span className="project-art-label">System / 0{project.id}</span>
+                <span className="project-art-mark">{project.id === 1 ? "POS" : "MERN"}</span>
+                <span className="project-art-line project-art-line-one" />
+                <span className="project-art-line project-art-line-two" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>

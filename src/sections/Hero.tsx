@@ -1,53 +1,33 @@
 import { motion } from "framer-motion"
-import { Briefcase, Code, Globe, Target } from "lucide-react"
+import { ArrowDown, ArrowUpRight, Code2, Database, Layers3 } from "lucide-react"
+
+const robotImage = "https://www.figma.com/api/mcp/asset/6f6490f9-f70b-47e2-a0b9-ee0e48c88573.png"
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-50">
-      <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2 max-w-7xl mx-auto px-6">
-        <div className="self-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-              Full-Stack Developer building fast, reliable web apps with
-              <span className="text-primary">.NET & MERN</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
-              5+ years of experience designing and building responsive web applications, SaaS platforms, and desktop solutions
-            </p>
-            <div className="flex gap-4">
-              <button
-                className="btn btn-primary px-6 py-3"
-                onClick={() => window.scrollTo({ top: document.getElementById("projects")?.offsetTop || 0, behavior: "smooth" })}
-              >
-                View Projects
-              </button>
-              <button
-                className="btn btn-outline px-6 py-3"
-                onClick={() => window.scrollTo({ top: document.getElementById("contact")?.offsetTop || 0, behavior: "smooth" })}
-              >
-                Contact Me
-              </button>
-            </div>
+    <section id="top" className="hero-section">
+      <div className="hero-grid-pattern" />
+      <div className="hero-content">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Full-stack systems, thoughtfully built</p>
+          <h1>Transforming <span>ideas</span><br />into <strong>digital products.</strong></h1>
+          <p className="hero-description">I design and build fast, reliable web applications with .NET, React, and the MERN stack, from first database schema to polished launch.</p>
+          <div className="hero-actions">
+            <a href="#projects" className="button button-blue">View my work <ArrowUpRight size={16} /></a>
+            <a href="#contact" className="button button-quiet">Start a conversation <ArrowUpRight size={16} /></a>
           </div>
+          <div className="client-note"><span className="avatar-stack"><i /><i /><i /></span> 5+ years turning complex requirements into clear software</div>
         </div>
-
-        <div className="relative self-center animate-fade-in-delay">
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-8xl font-bold text-white">AH</span>
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-primary/10 rounded-xl p-4 border border-primary/20">
-              <Target width={32} height={32} className="text-primary" />
-            </div>
-          </div>
+        <div className="hero-visual">
+          <div className="hero-glow" />
+          <img src={robotImage} alt="Abstract robot illustration from the reference theme" />
+          <div className="floating-chip chip-one"><Code2 size={16} /> API-first</div>
+          <div className="floating-chip chip-two"><Database size={16} /> Data-driven</div>
+          <div className="floating-chip chip-three"><Layers3 size={16} /> Built to scale</div>
         </div>
       </div>
-
-      <div className="absolute top-0 right-0 pt-8 pr-8 text-xs text-gray-500">
-        <span>•</span>
-        <span>•</span>
-        <span>•</span>
-      </div>
+      <a href="#about" className="scroll-cue" aria-label="Scroll to about"><ArrowDown size={16} /> Scroll to explore</a>
+      <div className="hero-dots">+<br />+<br />+</div>
     </section>
   )
 }

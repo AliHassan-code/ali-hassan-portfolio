@@ -62,6 +62,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     const mailOptions = {
       from: `"Ali Hassan Portfolio" <${smtpUser}>`,
       to: smtpUser,
+      replyTo: email,
       subject: `New contact form message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
@@ -74,14 +75,8 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       console.error("Email send error:", error)
       return res.status(500).json({ error: "Failed to send email" })
     }
-  } else {
-    // No SMTP configured - log the message and return success
-    console.log("=== CONTACT FORM SUBMISSION ===")
-    console.log(`Name: ${name}`)
-    console.log(`Email: ${email}`)
-    console.log(`Message: ${message}`)
-    console.log("=== END SUBMISSION ===")
-
-    return res.status(200).json({ success: "Message received (no SMTP configured)" })
   }
+
+  console.error("Contact form email delivery is not configured")
+  return res.status(503).json({ error: "Contact form email delivery is not configured yet" })
 }

@@ -1,40 +1,43 @@
+import { ArrowUpRight, CheckCircle2 } from "lucide-react"
 import { experience } from "../data/content"
 
 export const Experience = () => {
+  const currentRole = experience[0]
+
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="experience-section py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Experience</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            5+ years of professional full-stack development experience
-          </p>
+        <div className="section-heading-row experience-heading">
+          <div>
+            <p className="eyebrow"><span /> The work behind the work</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Experience that<br /><em>ships.</em></h2>
+          </div>
+          <p className="section-intro">I bring product thinking to technical decisions, keeping each system clear enough to evolve and useful enough to matter.</p>
         </div>
 
-        <div className="space-y-8">
-          {experience.map((item) => (
-            <div
-              key={item.role}
-              className="pt-8 border-l-4 border-primary space-y-6"
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold">{item.role}</h3>
-                  <p className="text-primary">{item.company}</p>
-                  <p className="text-gray-500 text-sm">{item.duration}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-500">{item.duration}</p>
-                </div>
-              </div>
+        <div className="experience-layout">
+          <div className="experience-stats">
+            <div><strong>5+</strong><span>Years building</span></div>
+            <div><strong>20+</strong><span>Products shipped</span></div>
+            <div><strong>3</strong><span>Core disciplines</span></div>
+          </div>
+          <article className="experience-feature">
+            <div className="experience-feature-head"><span>{currentRole.duration}</span><span className="status-dot">Available for selected work</span></div>
+            <h3>{currentRole.role}</h3>
+            <p className="experience-company">{currentRole.company}</p>
+            <p className="experience-summary">A hands-on practice across client products, internal tools, and business-critical platforms, with ownership from architecture through deployment.</p>
+            <a href="#contact" className="button button-blue">Work with me <ArrowUpRight size={16} /></a>
+          </article>
+        </div>
 
-              <ul className="list-disc list-inside space-y-2">
-                {item.points.map((point) => (
-                  <li key={point} className="text-gray-700">
-                    {point}
-                  </li>
-                ))}
-              </ul>
+        <div className="timeline-list">
+          {currentRole.points.map((point, index) => (
+            <div className="timeline-item" key={point}>
+              <div className="timeline-index"><span>0{index + 1}</span><CheckCircle2 size={17} className="timeline-icon" /></div>
+              <div className="timeline-content">
+                <span className="timeline-kicker">Delivery point</span>
+                <p>{point}</p>
+              </div>
             </div>
           ))}
         </div>
