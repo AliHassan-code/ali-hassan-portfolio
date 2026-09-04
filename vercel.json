@@ -4,7 +4,7 @@
       "runtime": "nodejs20"
     }
   },
-  "redirects": [
-    { "source": "/(.*)", "destination": "/index.html", "status": 200, "conditional": true }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
