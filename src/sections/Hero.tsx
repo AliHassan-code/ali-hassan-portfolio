@@ -15,7 +15,7 @@ export const Hero = () => {
             <a href="#projects" className="button button-blue">View my work <ArrowUpRight size={16} /></a>
             <a href="#contact" className="button button-quiet">Start a conversation <ArrowUpRight size={16} /></a>
           </div>
-          <div className="client-note"><span className="avatar-stack"><i /><i /><i /></span> 5+ years turning complex requirements into clear software</div>
+          <div className="client-note"><span className="avatar-stack"><i><img src={profileImage} alt="" /></i><i><img src={profileImage} alt="" /></i><i><img src={profileImage} alt="" /></i></span> 5+ years turning complex requirements into clear software</div>
         </div>
         <div className="hero-visual">
           <div className="hero-glow" />
