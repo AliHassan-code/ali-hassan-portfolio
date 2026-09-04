@@ -12,7 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vitejs/plugin-react": "^6.1.1",
