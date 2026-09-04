@@ -26,6 +26,13 @@ export const Experience = () => {
             <h3>{currentRole.role}</h3>
             <p className="experience-company">{currentRole.company}</p>
             <p className="experience-summary">A hands-on practice across client products, internal tools, and business-critical platforms, with ownership from architecture through deployment.</p>
+            <div className="experience-capabilities">
+              <span>Core delivery</span>
+              <div><b>01</b> Architecture</div>
+              <div><b>02</b> APIs & data</div>
+              <div><b>03</b> Product UI</div>
+              <div><b>04</b> Azure delivery</div>
+            </div>
             <a href="#contact" className="button button-blue">Work with me <ArrowUpRight size={16} /></a>
           </article>
         </div>
