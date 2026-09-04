@@ -1,14 +1,9 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node"
 import nodemailer from "nodemailer"
-import rateLimit from "express-rate-limit"
 
-// Rate limiter: 5 requests per 15 minutes per IP
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5,
-  validate: false,
-  message: { error: "Too many requests, please try again later." },
-})
+const requestLog = new Map<string, number[]>()
+const rateLimitWindow = 15 * 60 * 1000
+const maxRequests = 5
 
 export const config = {
   api: {
@@ -23,10 +18,17 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     return res.status(405).json({ error: "Method not allowed" })
   }
 
-  // Apply rate limiter
-  await new Promise<void>((resolve) => {
-    limiter(req, res as any, () => resolve())
-  })
+  const clientKey = getClientKey(req)
+  const now = Date.now()
+  const recentRequests = (requestLog.get(clientKey) || []).filter(
+    (timestamp) => now - timestamp < rateLimitWindow,
+  )
+
+  if (recentRequests.length >= maxRequests) {
+    return res.status(429).json({ error: "Too many requests, please try again later." })
+  }
+
+  requestLog.set(clientKey, [...recentRequests, now])
 
   const { name, email, message } = req.body || {}
 
@@ -80,4 +82,11 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
   console.error("Contact form email delivery is not configured")
   return res.status(503).json({ error: "Contact form email delivery is not configured yet" })
+}
+
+const getClientKey = (req: VercelRequest) => {
+  const forwardedFor = req.headers["x-forwarded-for"]
+  if (typeof forwardedFor === "string") return forwardedFor.split(",")[0].trim()
+  if (Array.isArray(forwardedFor)) return forwardedFor[0] || "unknown"
+  return req.socket?.remoteAddress || "unknown"
 }
