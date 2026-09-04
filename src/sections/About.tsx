@@ -1,5 +1,7 @@
 import { ArrowUpRight, Check, MapPin } from "lucide-react"
 
+const profileImage = "/ali-hassan.jpg"
+
 export const About = () => {
   return (
     <section className="about-section py-24 md:py-32">
@@ -14,7 +16,7 @@ export const About = () => {
 
         <div className="about-profile-card">
           <div className="about-card-top"><span>Profile / 01</span><MapPin size={18} /></div>
-          <div className="about-monogram">AH</div>
+          <div className="about-monogram"><img src={profileImage} alt="Ali Hassan" /></div>
           <div className="about-profile-meta"><strong>Ali Hassan</strong><span>Full-Stack / .NET Developer</span></div>
           <div className="about-stats">
             <div><strong>5+</strong><span>Years experience</span></div>

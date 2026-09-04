@@ -1,7 +1,6 @@
-import { motion } from "framer-motion"
 import { ArrowDown, ArrowUpRight, Code2, Database, Layers3 } from "lucide-react"
 
-const robotImage = "https://www.figma.com/api/mcp/asset/6f6490f9-f70b-47e2-a0b9-ee0e48c88573.png"
+const profileImage = "/ali-hassan.jpg"
 
 export const Hero = () => {
   return (
@@ -20,7 +19,9 @@ export const Hero = () => {
         </div>
         <div className="hero-visual">
           <div className="hero-glow" />
-          <img src={robotImage} alt="Abstract robot illustration from the reference theme" />
+          <div className="hero-portrait-frame">
+            <img src={profileImage} alt="Ali Hassan" className="hero-portrait" />
+          </div>
           <div className="floating-chip chip-one"><Code2 size={16} /> API-first</div>
           <div className="floating-chip chip-two"><Database size={16} /> Data-driven</div>
           <div className="floating-chip chip-three"><Layers3 size={16} /> Built to scale</div>
