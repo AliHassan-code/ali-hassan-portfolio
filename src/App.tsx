@@ -8,6 +8,7 @@ import { Projects } from "./sections/Projects"
 import { FAQ } from "./sections/FAQ"
 import { Contact } from "./sections/Contact"
 import { Footer } from "./components/Footer"
+import { ContactPrompt, WhatsAppButton } from "./components/ContactPrompt"
 
 export default function App() {
   return (
@@ -36,6 +37,8 @@ export default function App() {
       </main>
 
       <Footer />
+      <WhatsAppButton />
+      <ContactPrompt />
     </div>
   )
 }

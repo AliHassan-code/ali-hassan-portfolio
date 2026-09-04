@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className="footer-main max-w-7xl mx-auto px-6">
         <div className="footer-brand">
           <a href="#top" className="brand-mark">
-            <span className="brand-icon">AH</span>
+            <span className="footer-portrait"><img src="/ali-hassan.jpg" alt="Ali Hassan" /></span>
             <span><strong>Ali</strong><small>Hassan / Developer</small></span>
           </a>
           <p>Full-stack development for products, platforms, and business systems that need to work.</p>
