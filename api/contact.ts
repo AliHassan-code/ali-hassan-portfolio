@@ -6,6 +6,7 @@ import rateLimit from "express-rate-limit"
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 5,
+  validate: false,
   message: { error: "Too many requests, please try again later." },
 })
 
@@ -27,7 +28,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     limiter(req, res as any, () => resolve())
   })
 
-  const { name, email, message } = req.body
+  const { name, email, message } = req.body || {}
 
   // Validate input
   if (!name || !email || !message) {
