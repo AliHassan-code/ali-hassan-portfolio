@@ -1,52 +1,64 @@
+import { ArrowUpRight, Check } from "lucide-react"
 import { projects } from "../data/content"
 
 export const Projects = () => {
   return (
     <section className="projects-section py-24 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Projects & Portfolio</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
- showcase of built applications and systems
-          </p>
+        <div className="projects-heading">
+          <p className="eyebrow"><span /> Selected work</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Projects &amp; Portfolio</h2>
+          <p>Business software and client projects built around practical workflows.</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="project-grid">
           {projects.map((project) => (
-            <article
-              key={project.id}
-              className="project-card group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="project-art aspect-video rounded-t-xl bg-primary/10">
-                <span className="project-art-label">System / 0{project.id}</span>
-                <span className="project-art-mark">{project.id === 1 ? "POS" : "MERN"}</span>
-                <span className="project-art-line project-art-line-one" />
-                <span className="project-art-line project-art-line-two" />
+            <article key={project.id} className="project-card">
+              <div className="project-preview">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} project preview`}
+                    width={640}
+                    height={360}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="project-placeholder">
+                    <span>Project / 0{project.id}</span>
+                    <strong>Screenshot pending</strong>
+                  </div>
+                )}
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs bg-primary/5 text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+
+              <div className="project-card-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="project-tags" aria-label="Technologies">
+                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
+                <ul className="project-features">
+                  {project.features.map((feature) => (
+                    <li key={feature}><Check size={14} aria-hidden="true" />{feature}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="p-6 border-t border-gray-100">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  View on GitHub
-                </a>
-              </div>
+
+              {(project.demoUrl || project.githubUrl) && (
+                <div className="project-actions">
+                  {project.demoUrl && (
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      Live demo <ArrowUpRight size={15} />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      GitHub repository <ArrowUpRight size={15} />
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>

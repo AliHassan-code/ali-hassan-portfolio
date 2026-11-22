@@ -10,17 +10,17 @@ export const Hero = () => {
         <div className="hero-copy">
           <p className="eyebrow"><span /> Full-stack systems, thoughtfully built</p>
           <h1>Transforming <span>ideas</span><br />into <strong>digital products.</strong></h1>
-          <p className="hero-description">I design and build fast, reliable web applications with .NET, React, and the MERN stack, from first database schema to polished launch.</p>
+          <p className="hero-description">I&apos;m Ali Hassan, a Full Stack Developer in Pakistan building modern business web applications with React, ASP.NET Core, .NET, and the MERN stack, from data model to launch.</p>
           <div className="hero-actions">
             <a href="#projects" className="button button-blue">View my work <ArrowUpRight size={16} /></a>
             <a href="#contact" className="button button-quiet">Start a conversation <ArrowUpRight size={16} /></a>
           </div>
-          <div className="client-note"><span className="avatar-stack"><i><img src={profileImage} alt="" /></i><i><img src={profileImage} alt="" /></i><i><img src={profileImage} alt="" /></i></span> 5+ years turning complex requirements into clear software</div>
+          <p className="client-note">From data models and APIs to responsive product interfaces.</p>
         </div>
         <div className="hero-visual">
           <div className="hero-glow" />
           <div className="hero-portrait-frame">
-            <img src={profileImage} alt="Ali Hassan" className="hero-portrait" />
+            <img src={profileImage} alt="Portrait of Ali Hassan, Full Stack Developer" className="hero-portrait" width={842} height={1184} fetchPriority="high" decoding="async" />
           </div>
           <div className="floating-chip chip-one"><Code2 size={16} /> API-first</div>
           <div className="floating-chip chip-two"><Database size={16} /> Data-driven</div>

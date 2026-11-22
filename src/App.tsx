@@ -13,25 +13,27 @@ import { ContactPrompt, WhatsAppButton } from "./components/ContactPrompt"
 export default function App() {
   return (
     <div className="site-shell">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Hero />
-        <section id="skills" className="section section-dark">
+        <section id="skills" className="section section-dark" aria-label="Services and toolkit">
           <Skills />
         </section>
-        <section id="experience" className="section section-dark">
+        <section id="experience" className="section section-dark" aria-label="Professional experience">
           <Experience />
         </section>
-        <section id="projects" className="section section-dark">
+        <section id="projects" className="section section-dark" aria-label="Projects and portfolio">
           <Projects />
         </section>
-        <section id="about" className="section section-dark">
+        <section id="about" className="section section-dark" aria-label="About Ali Hassan">
           <About />
         </section>
-        <section id="faq" className="section section-dark">
+        <section id="faq" className="section section-dark" aria-label="Frequently asked questions">
           <FAQ />
         </section>
-        <section id="contact" className="section section-dark">
+        <section id="contact" className="section section-dark" aria-label="Contact Ali Hassan">
           <Contact />
         </section>
       </main>

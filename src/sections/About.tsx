@@ -9,19 +9,19 @@ export const About = () => {
         <div className="about-copy">
           <p className="eyebrow"><span /> A developer with a product mindset</p>
           <h2>Good software makes<br /><em>complex things clear.</em></h2>
-          <p className="about-lede">I am Ali Hassan, a full-stack developer focused on building business software that feels straightforward to use and dependable behind the scenes.</p>
-          <p className="about-body">For more than five years, I have worked across retail, hospitality, and real estate, connecting thoughtful interfaces with solid APIs, useful data models, and deployments that can grow with the team using them.</p>
+          <p className="about-lede">I am Ali Hassan, a Full Stack Developer in Pakistan building business software that is straightforward to use and dependable behind the scenes.</p>
+          <p className="about-body">My work spans point-of-sale and booking systems, using React, ASP.NET Core, .NET, and the MERN stack. I focus on clear workflows, maintainable APIs and data models, and interfaces that make complex tasks easier to use.</p>
           <a href="#contact" className="button button-blue about-cta">Let&apos;s work together <ArrowUpRight size={16} /></a>
         </div>
 
         <div className="about-profile-card">
           <div className="about-card-top"><span>Profile / 01</span><MapPin size={18} /></div>
-          <div className="about-monogram"><img src={profileImage} alt="Ali Hassan" /></div>
+          <div className="about-monogram"><img src={profileImage} alt="Portrait of Ali Hassan, Full Stack Developer" width={842} height={1184} loading="lazy" decoding="async" /></div>
           <div className="about-profile-meta"><strong>Ali Hassan</strong><span>Full-Stack / .NET Developer</span></div>
           <div className="about-stats">
-            <div><strong>5+</strong><span>Years experience</span></div>
-            <div><strong>2</strong><span>Primary stacks</span></div>
-            <div><strong>∞</strong><span>Curiosity</span></div>
+            <div><strong>Full-stack</strong><span>Product delivery</span></div>
+            <div><strong>.NET + MERN</strong><span>Core stacks</span></div>
+            <div><strong>Web + desktop</strong><span>Application types</span></div>
           </div>
           <div className="about-focus">
             <span>Current focus</span>

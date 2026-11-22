@@ -12,8 +12,6 @@ export interface Service {
 
 export interface TimelineItem {
   role: string
-  company: string
-  duration: string
   points: string[]
 }
 
@@ -22,7 +20,9 @@ export interface Project {
   title: string
   description: string
   tags: string[]
-  githubUrl: string
+  features: string[]
+  image?: string
+  githubUrl?: string
   demoUrl?: string
 }
 
@@ -40,7 +40,7 @@ export interface FaqItem {
 export const services: Service[] = [
   {
     number: "01",
-    title: "Full-Stack Products",
+    title: "Full-Stack Development",
     description: "From an early idea to a dependable product that people can use every day.",
     details: ["React interfaces", "ASP.NET Core APIs", "Responsive delivery"],
   },
@@ -52,7 +52,7 @@ export const services: Service[] = [
   },
   {
     number: "03",
-    title: "Data & Cloud",
+    title: "Database & API Solutions",
     description: "Clear data foundations and deployments that stay maintainable as you grow.",
     details: ["SQL and MongoDB", "REST API design", "Microsoft Azure"],
   },
@@ -60,19 +60,23 @@ export const services: Service[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Languages & Frameworks",
-    items: ["C#", "ASP.NET Core", "JavaScript", "Node.js", "React", "MERN Stack"],
+    title: "Frontend Development",
+    items: ["React", "JavaScript"],
+  },
+  {
+    title: "Backend Development",
+    items: ["C#", "ASP.NET Core", "Node.js", "REST APIs", "MERN Stack"],
   },
   {
     title: "Databases",
     items: ["SQL Server", "PostgreSQL", "MongoDB"],
   },
   {
-    title: "Cloud & Tools",
-    items: ["Microsoft Azure", "Git/GitHub", "REST APIs"],
+    title: "Cloud & Development Tools",
+    items: ["Microsoft Azure", "Git/GitHub"],
   },
   {
-    title: "Application Types",
+    title: "Application Development",
     items: ["Responsive Websites", "SaaS Platforms", ".NET Web Applications", ".NET Desktop Applications"],
   },
 ]
@@ -80,8 +84,6 @@ export const skillCategories: SkillCategory[] = [
 export const experience: TimelineItem[] = [
   {
     role: "Full-Stack / .NET Developer",
-    company: "5+ Years of Professional Experience",
-    duration: "2019 – Present",
     points: [
       "Designed, developed, and maintained full-stack web applications using ASP.NET Core, React, and the MERN stack for clients across multiple industries.",
       "Built responsive, mobile-friendly websites and SaaS platforms tailored to individual client business requirements.",
@@ -97,18 +99,26 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Trade 360 — Point-of-Sale System",
-    description: "Built with ASP.NET Core; manages inventory, billing, and reporting for retail stores.",
+    description: "Retail POS for inventory management, billing, and reporting, built with ASP.NET Core.",
     tags: ["ASP.NET Core", "SQL Server", "POS"],
-    githubUrl: "https://github.com/AliHassan-code/trade-360",
+    features: ["Inventory management", "Billing", "Reporting"],
   },
   {
     id: 2,
-    title: "Client Booking & Business Websites — MERN Stack",
-    description: "Developed custom websites for clients including property dealer listings, hotel room booking, and tour booking systems, tailored to each client's specific requirements.",
+    title: "Client Booking & Business Websites",
+    description: "MERN websites for property listings, hotel booking, and tour booking.",
     tags: ["React", "Node.js", "MongoDB", "MERN"],
-    githubUrl: "https://github.com/AliHassan-code/mern-bookings",
+    features: ["Property listings", "Hotel booking", "Tour booking"],
   },
 ]
+
+export const contactLinks = {
+  email: "alihassantariq107@gmail.com",
+  phone: "03273911676",
+  whatsapp: "https://wa.me/923434795732",
+  linkedin: "https://www.linkedin.com/in/ali-hassan-choudhary/",
+  github: "https://github.com/AliHassan-code",
+}
 
 export const faqItems: FaqItem[] = [
   {

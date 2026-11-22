@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react"
+import { contactLinks } from "../data/content"
 
 export const Footer = () => {
   return (
@@ -14,7 +15,7 @@ export const Footer = () => {
       <div className="footer-main max-w-7xl mx-auto px-6">
         <div className="footer-brand">
           <a href="#top" className="brand-mark">
-            <span className="footer-portrait"><img src="/ali-hassan.jpg" alt="Ali Hassan" /></span>
+            <span className="footer-portrait"><img src="/ali-hassan.jpg" alt="" width={842} height={1184} loading="lazy" decoding="async" /></span>
             <span><strong>Ali</strong><small>Hassan / Developer</small></span>
           </a>
           <p>Full-stack development for products, platforms, and business systems that need to work.</p>
@@ -29,12 +30,12 @@ export const Footer = () => {
           <span>Connect</span>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
-          <a href="mailto:alihassantariq107@gmail.com">Email me</a>
+          <a href={`mailto:${contactLinks.email}`}>Email me</a>
         </div>
         <div className="footer-column">
           <span>Elsewhere</span>
-          <a href="https://github.com/AliHassan-code" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight size={14} /></a>
-          <a href="https://www.linkedin.com/in/ali-hassan-choudhary/" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={14} /></a>
+          <a href={contactLinks.github} target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight size={14} /></a>
+          <a href={contactLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={14} /></a>
         </div>
       </div>
 

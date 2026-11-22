@@ -17,15 +17,14 @@ export const Experience = () => {
 
         <div className="experience-layout">
           <div className="experience-stats">
-            <div><strong>5+</strong><span>Years building</span></div>
-            <div><strong>20+</strong><span>Products shipped</span></div>
-            <div><strong>3</strong><span>Core disciplines</span></div>
+            <div><strong>Full-stack</strong><span>Product delivery</span></div>
+            <div><strong>Business</strong><span>Systems & workflows</span></div>
+            <div><strong>Web + desktop</strong><span>Application development</span></div>
           </div>
           <article className="experience-feature">
-            <div className="experience-feature-head"><span>{currentRole.duration}</span><span className="status-dot">Available for selected work</span></div>
+            <div className="experience-feature-head"><span>Professional focus</span><span className="status-dot">Available for selected work</span></div>
             <h3>{currentRole.role}</h3>
-            <p className="experience-company">{currentRole.company}</p>
-            <p className="experience-summary">A hands-on practice across client products, internal tools, and business-critical platforms, with ownership from architecture through deployment.</p>
+            <p className="experience-summary">Building and maintaining web applications, APIs, and business software from data models through deployment.</p>
             <div className="experience-capabilities">
               <span>Core delivery</span>
               <div><b>01</b> Architecture</div>

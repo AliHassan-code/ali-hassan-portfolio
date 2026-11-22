@@ -2,7 +2,7 @@
 
 ## Overview
 
-A fully responsive personal portfolio website built with **React + TypeScript** (Vite) on the frontend and **Node.js (Express)** on the backend, ready to deploy on **Vercel**.
+A personal portfolio website built with **React + TypeScript** (Vite), with a Vercel serverless function for contact form delivery.
 
 ## Table of Contents
 
@@ -75,21 +75,18 @@ Create a `.env` file in the root directory. Based on `.env.example`:
 # SMTP_USER=your-email@example.com
 # SMTP_PASS=your-smtp-password
 
-# OR use Resend API key
-# RESEND_API_KEY=re_XXXXX
-
 # Application
 NODE_ENV=production
 ```
 
 ### Contact Form Backend
 
-The `/api/contact` endpoint is a Vercel serverless function. During development, it will:
+The `/api/contact` endpoint is a Vercel serverless function. It will:
 
 - **If SMTP credentials are configured**: Send an email via nodemailer
-- **If no SMTP credentials**: Log the message to the console and return success
+- **If SMTP credentials are missing**: Return a `503` response and show an error in the form; it does not claim delivery succeeded
 
-This structure allows you to swap in an email provider by simply adding the SMTP env vars - no code changes needed beyond that.
+Configure `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS` in the deployment environment to enable message delivery.
 
 ## Deployment to Vercel
 
@@ -128,7 +125,7 @@ Go to the Vercel Dashboard → Your Project → Settings → Environment Variabl
 | `SMTP_USER` | Your SMTP username/email |
 | `SMTP_PASS` | Your SMTP password/api key |
 
-If you don't add these env vars, the contact form will still work by logging messages to the console (useful for testing).
+Without these environment variables, the contact endpoint returns an error and does not send or store messages.
 
 ### Step 5: Enable Production
 
@@ -149,9 +146,9 @@ vercel --prod
 
 - **Client-side validation**: Name, email, and message fields are validated before submission
 - **Server-side validation**: The `/api/contact` endpoint validates all input
-- **Success feedback**: Toast/message displayed when message is sent
+- **Success feedback**: Shown after the server confirms the email was sent
 - **Error feedback**: Clear error message if submission fails
-- **No SMTP configured**: Messages are logged to the console and success is returned
+- **No SMTP configured**: The endpoint returns an error; no message is stored or sent
 
 ## Contacts
 

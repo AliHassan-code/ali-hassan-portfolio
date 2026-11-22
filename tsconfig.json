@@ -4,6 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
@@ -15,7 +16,6 @@
     },
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noImplicitThrows": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleResolution": "bundler"

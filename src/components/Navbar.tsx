@@ -1,16 +1,28 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ArrowUpRight, Menu, X } from "lucide-react"
+import { contactLinks } from "../data/content"
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false)
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [menuOpen])
+
   return (
-    <nav className={`site-nav${menuOpen ? " menu-open" : ""}`}>
+    <nav className={`site-nav${menuOpen ? " menu-open" : ""}`} aria-label="Main navigation">
       <div className="nav-inner">
         <a href="#top" className="brand-mark" aria-label="Ali Hassan home" onClick={closeMenu}>
-          <span className="brand-icon"><img src="/ali-hassan.jpg" alt="Ali Hassan" /></span>
+          <span className="brand-icon"><img src="/ali-hassan.jpg" alt="" width={842} height={1184} /></span>
           <span>
             <strong>Ali</strong>
             <small>Hassan / Developer</small>
@@ -24,10 +36,10 @@ export const Navbar = () => {
           <li><a href="#experience">Experience</a></li>
         </ul>
         <div className="nav-actions">
-          <a href="https://github.com/AliHassan-code" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href={contactLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             GH
           </a>
-          <a href="https://www.linkedin.com/in/ali-hassan-choudhary/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href={contactLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             IN
           </a>
           <a href="#contact" className="button button-blue nav-cta">Let's talk <ArrowUpRight size={16} /></a>
@@ -37,12 +49,18 @@ export const Navbar = () => {
           className="mobile-menu-toggle"
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setMenuOpen((isOpen) => !isOpen)}
         >
           {menuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
-      <div className="mobile-nav-panel">
+      <div
+        id="mobile-navigation"
+        className="mobile-nav-panel"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+      >
         <a href="#top" onClick={closeMenu}>Home</a>
         <a href="#skills" onClick={closeMenu}>Services</a>
         <a href="#projects" onClick={closeMenu}>Portfolio</a>

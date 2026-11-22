@@ -20,17 +20,20 @@ export const FAQ = () => {
 
             return (
               <div className={`faq-item${isOpen ? " is-open" : ""}`} key={item.question}>
-                <button
-                  type="button"
-                  className="faq-trigger"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                >
-                  <span className="faq-number">0{index + 1}</span>
-                  <span className="faq-question">{item.question}</span>
-                  <ChevronDown size={17} className="faq-chevron" />
-                </button>
-                <div className="faq-answer" aria-hidden={!isOpen}>
+                <h3>
+                  <button
+                    type="button"
+                    className="faq-trigger"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  >
+                    <span className="faq-number">0{index + 1}</span>
+                    <span className="faq-question">{item.question}</span>
+                    <ChevronDown size={17} className="faq-chevron" aria-hidden="true" />
+                  </button>
+                </h3>
+                <div id={`faq-answer-${index}`} className="faq-answer" aria-hidden={!isOpen}>
                   <p>{item.answer}</p>
                 </div>
               </div>
