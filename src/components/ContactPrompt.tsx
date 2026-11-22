@@ -63,6 +63,6 @@ export const WhatsAppButton = () => (
     aria-label="Chat with Ali Hassan on WhatsApp"
   >
     <span className="whatsapp-icon whatsapp-icon-large"><MessageCircle size={23} /><Phone size={10} /></span>
-    <span>WhatsApp</span>
+    <span className="whatsapp-float-label">WhatsApp</span>
   </a>
 )
