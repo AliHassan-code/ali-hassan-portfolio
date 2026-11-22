@@ -40,20 +40,20 @@ export interface FaqItem {
 export const services: Service[] = [
   {
     number: "01",
-    title: "Full-Stack Development",
-    description: "From an early idea to a dependable product that people can use every day.",
-    details: ["React interfaces", "ASP.NET Core APIs", "Responsive delivery"],
+    title: "React.js & Full-Stack Development",
+    description: "Responsive React.js websites and full-stack web applications shaped around real user workflows.",
+    details: ["React.js interfaces", "JavaScript development", "ASP.NET Core APIs"],
   },
   {
     number: "02",
-    title: "Business Systems",
-    description: "Focused software for the workflows that keep a business moving.",
+    title: "Custom Business Web Applications",
+    description: "Custom business software for the workflows that keep a business moving.",
     details: ["POS and inventory", "Booking platforms", "Role-based dashboards"],
   },
   {
     number: "03",
-    title: "Database & API Solutions",
-    description: "Clear data foundations and deployments that stay maintainable as you grow.",
+    title: "Backend, Database & API Solutions",
+    description: "Maintainable data foundations and APIs for modern web application development.",
     details: ["SQL and MongoDB", "REST API design", "Microsoft Azure"],
   },
 ]
@@ -98,15 +98,15 @@ export const experience: TimelineItem[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Trade 360 — Point-of-Sale System",
-    description: "Retail POS for inventory management, billing, and reporting, built with ASP.NET Core.",
+    title: "Trade 360 — ASP.NET Core Point-of-Sale System",
+    description: "A retail point-of-sale web application for inventory management, billing, and reporting, built with ASP.NET Core and SQL Server.",
     tags: ["ASP.NET Core", "SQL Server", "POS"],
     features: ["Inventory management", "Billing", "Reporting"],
   },
   {
     id: 2,
-    title: "Client Booking & Business Websites",
-    description: "MERN websites for property listings, hotel booking, and tour booking.",
+    title: "MERN Stack Booking & Business Websites",
+    description: "Responsive React.js and MERN stack websites for property listings, hotel reservations, and tour booking.",
     tags: ["React", "Node.js", "MongoDB", "MERN"],
     features: ["Property listings", "Hotel booking", "Tour booking"],
   },
@@ -123,7 +123,7 @@ export const contactLinks = {
 export const faqItems: FaqItem[] = [
   {
     question: "What kind of projects do you take on?",
-    answer: "I work on responsive websites, SaaS platforms, booking systems, dashboards, and business applications where a dependable full-stack implementation is needed.",
+    answer: "I build responsive React.js websites, SaaS platforms, booking systems, dashboards, and business applications that need a dependable full-stack implementation.",
   },
   {
     question: "Can you work with an existing codebase?",

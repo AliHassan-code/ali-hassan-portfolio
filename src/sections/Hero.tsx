@@ -9,13 +9,13 @@ export const Hero = () => {
       <div className="hero-content">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Full-stack systems, thoughtfully built</p>
-          <h1>Transforming <span>ideas</span><br />into <strong>digital products.</strong></h1>
-          <p className="hero-description">I&apos;m Ali Hassan, a Full Stack Developer in Pakistan building modern business web applications with React, ASP.NET Core, .NET, and the MERN stack, from data model to launch.</p>
+          <h1>Ali Hassan<br /><span>React.js</span><br /><strong>Developer in Pakistan.</strong></h1>
+          <p className="hero-description">I build responsive React.js websites and full-stack web applications with JavaScript, ASP.NET Core, .NET, and the MERN stack, from data model to launch.</p>
           <div className="hero-actions">
             <a href="#projects" className="button button-blue">View my work <ArrowUpRight size={16} /></a>
             <a href="#contact" className="button button-quiet">Start a conversation <ArrowUpRight size={16} /></a>
           </div>
-          <p className="client-note">From data models and APIs to responsive product interfaces.</p>
+          <p className="client-note">From data models and APIs to responsive website interfaces.</p>
         </div>
         <div className="hero-visual">
           <div className="hero-glow" />

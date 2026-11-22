@@ -8,9 +8,9 @@ export const About = () => {
       <div className="about-inner max-w-7xl mx-auto px-6">
         <div className="about-copy">
           <p className="eyebrow"><span /> A developer with a product mindset</p>
-          <h2>Good software makes<br /><em>complex things clear.</em></h2>
-          <p className="about-lede">I am Ali Hassan, a Full Stack Developer in Pakistan building business software that is straightforward to use and dependable behind the scenes.</p>
-          <p className="about-body">My work spans point-of-sale and booking systems, using React, ASP.NET Core, .NET, and the MERN stack. I focus on clear workflows, maintainable APIs and data models, and interfaces that make complex tasks easier to use.</p>
+          <h2>About Ali Hassan,<br /><em>web developer.</em></h2>
+          <p className="about-lede">I am Ali Hassan, a React.js and full-stack web developer in Pakistan. I build business software and websites that are straightforward to use and dependable behind the scenes.</p>
+          <p className="about-body">My work spans point-of-sale and booking systems, responsive React.js interfaces, and applications built with ASP.NET Core, .NET, and the MERN stack. I focus on clear workflows, maintainable APIs and data models, and interfaces that make complex tasks easier to use.</p>
           <a href="#contact" className="button button-blue about-cta">Let&apos;s work together <ArrowUpRight size={16} /></a>
         </div>
 

@@ -10,9 +10,9 @@ export const Skills = () => {
         <div className="section-heading-row">
           <div>
             <p className="eyebrow"><span /> What I build</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Services for ideas<br />that need to work.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">React.js &amp; full-stack<br />web development.</h2>
           </div>
-          <p className="section-intro">Practical engineering across product design, backend systems, and the interfaces that connect them.</p>
+          <p className="section-intro">Responsive website development and practical engineering across product interfaces, backend systems, and the APIs that connect them.</p>
         </div>
 
         <div className="services-grid">
@@ -35,8 +35,8 @@ export const Skills = () => {
         <div className="toolkit-panel">
           <div className="toolkit-heading">
             <span className="skills-label">Toolkit</span>
-            <h3>Tools I reach for<br /><em>every day.</em></h3>
-            <p>A practical stack shaped around building, shipping, and supporting real products.</p>
+            <h3>Web development<br /><em>toolkit.</em></h3>
+            <p>A practical React, JavaScript, .NET, and MERN stack for building and supporting real products.</p>
           </div>
           <div className="toolkit-categories">
             {skillCategories.map((category, index) => (
